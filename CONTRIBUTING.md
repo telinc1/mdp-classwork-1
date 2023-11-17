@@ -1,4 +1,4 @@
-## Contributing to this project
+# Contributing to this project
 
 Hi! These are sample contributor guidelines.
 

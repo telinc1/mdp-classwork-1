@@ -8,7 +8,7 @@ on:
 
 jobs:
   flake8:
-    name: Lint (flake8)
+    name: Lint Python
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -32,3 +32,15 @@ jobs:
         uses: editorconfig-checker/action-editorconfig-checker@main
       - name: Run editorconfig-checker
         run: editorconfig-checker
+  markdownlint:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Node
+        uses: actions/setup-node@v4
+      - name: Install MarkdownLint
+        run: npm install -g markdownlint-cli
+      - name: Run MarkdownLint
+        run: markdownlint-cli --ignore LICENSE.md --ignore README.md .
