@@ -22,3 +22,13 @@ jobs:
         with:
           path: "src"
           max-line-length: "100"
+  editorconfig:
+    name: Check .editorconfig
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install editorconfig-checker
+        uses: editorconfig-checker/action-editorconfig-checker@main
+      - name: Run editorconfig-checker
+        run: editorconfig-checker
