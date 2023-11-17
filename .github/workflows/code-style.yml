@@ -1,0 +1,23 @@
+name: Code Style
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  flake8:
+    name: Lint (flake8)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Lint
+        uses: py-actions/flake8@v2
+        with:
+          path: "src"
