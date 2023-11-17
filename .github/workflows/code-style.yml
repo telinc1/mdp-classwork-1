@@ -43,4 +43,4 @@ jobs:
       - name: Install MarkdownLint
         run: npm install -g markdownlint-cli
       - name: Run MarkdownLint
-        run: markdownlint-cli --ignore LICENSE.md --ignore README.md .
+        run: markdownlint --ignore LICENSE.md --ignore README.md .
